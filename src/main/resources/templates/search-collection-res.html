@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head::head(title=#{title.coin.overview})">
+</head>
+<link rel="icon"
+      href="https://purepng.com/public/uploads/large/purepng.com-dollar-coinobjectsdollar-coinmoneycashdollarcoinobjectgoldcurrencyusacentmoneycashdollarcoinobjectgoldcurrencyusacent-631522323253awxb9.png">
+
+
+<body>
+
+<header th:replace="fragments/header :: header(current='muntCollectieOverview')"></header>
+<main class="container">
+    <h2 th:text="#{search.collection}"></h2>
+
+
+
+
+            <ul class="list-group">
+                <li class="list-group-item" th:text="${collection.titel}"></li>
+                <li class="list-group-item" th:text="${collection.land}"></li>
+                <li class="list-group-item" th:text="${collection.jaartal}"></li>
+
+            </ul>
+
+
+        </form>
+
+</main>
+<footer th:replace="fragments/footer"></footer>
+
+</body>
+</html>

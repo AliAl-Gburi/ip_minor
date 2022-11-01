@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head::head(title=#{title.clubhouse.filter})">
+</head>
+<link rel="icon"
+      href="https://purepng.com/public/uploads/large/purepng.com-dollar-coinobjectsdollar-coinmoneycashdollarcoinobjectgoldcurrencyusacentmoneycashdollarcoinobjectgoldcurrencyusacent-631522323253awxb9.png">
+
+
+<body>
+
+<header th:replace="fragments/header :: header(current='clubhouseFilter')"></header>
+<main class="container">
+    <h2 th:text="#{filter.by.maxmembers}"></h2>
+    <span class="text-danger" th:if="${error != null}" th:text="#{${error}}"></span>
+
+    <form method="get" action="/clubhouses/filter">
+        <p class="mb-3">
+            <input type="number" id="from" th:name="from" th:placeholder="#{from}" class="form-control col-sm-5">
+        </p>
+        <p class="mb-3">
+            <input type="number" id="to" th:name="to" th:placeholder="#{to}" class="form-control col-sm-5">
+        </p>
+        <p><input type="submit" th:value="#{filter}" class="btn btn-secondary"></p>
+    </form>
+
+</main>
+<footer th:replace="fragments/footer"></footer>
+
+</body>
+</html>

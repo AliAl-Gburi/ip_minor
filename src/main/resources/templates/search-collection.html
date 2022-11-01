@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head::head(title=#{title.coin.add})">
+
+</head>
+<link rel="icon" href="https://purepng.com/public/uploads/large/purepng.com-dollar-coinobjectsdollar-coinmoneycashdollarcoinobjectgoldcurrencyusacentmoneycashdollarcoinobjectgoldcurrencyusacent-631522323253awxb9.png">
+
+<body>
+<header th:replace="fragments/header :: header(current='addMuntCollectie')"></header>
+<main>
+    <div class="container">
+        <h2 th:text="#{search.collection}"></h2>
+        <form method="get" action="/collections/searchCollectionRes"  >
+
+            <p class="mb-3">
+                <label for="titel" class="col-form-label" th:text="#{titel.label}"></label>
+                <input type="text" id="titel" th:name="value" th:placeholder="#{titel.label}" class="form-control col-sm-5">
+
+            </p>
+
+
+
+            <p><input type="submit" th:text="#{title.searche}" class="btn btn-secondary"></p>
+        </form>
+    </div>
+</main>
+<footer th:replace="fragments/footer"></footer>
+
+</body>
+</html>

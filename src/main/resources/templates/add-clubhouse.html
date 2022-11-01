@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head::head(title=#{title.clubhouse.add})">
+
+</head>
+<link rel="icon" href="https://purepng.com/public/uploads/large/purepng.com-dollar-coinobjectsdollar-coinmoneycashdollarcoinobjectgoldcurrencyusacentmoneycashdollarcoinobjectgoldcurrencyusacent-631522323253awxb9.png">
+
+<body>
+<header th:replace="fragments/header :: header(current='addClubHouse')"></header>
+<main>
+    <div class="container">
+        <h2 th:text="#{title.clubhouse.add}"></h2>
+
+        <form method="post" action="/clubhouses/add" th:object="${clubHouse}">
+
+            <span th:each="error:${#fields.errors('name')}" th:text="#{${error}}" class="text-danger"></span>
+            <span th:if="${nu != null}" th:text="#{${nu}}" class="text-danger"></span>
+
+
+            <p class="mb-3">
+                <label for="name" class="col-form-label" th:text="#{Name}"></label>
+                <input type="text" th:field="*{name}" id="name" th:placeholder="#{Name}" class="form-control col-sm-5">
+
+            </p>
+
+
+            <p class="mb-3">
+
+                <label for="email" th:text="#{Email}"></label>
+                <input type="text" th:field="*{email}" id="email" th:placeholder="#{Email}" class="form-control col-sm-5">
+                <span th:each="error:${#fields.errors('email')}" th:text="#{${error}}" class="text-danger"></span>
+
+
+            </p>
+            <p class="mb-3">
+                <label for="maxleden" th:text="#{MaxMembers}"></label>
+                <input type="number" th:field="*{maxLeden}" id="maxleden" th:placeholder="#{MaxMembers}" min="0" class="form-control col-sm-5">
+                <span th:each="error:${#fields.errors('maxLeden')}" th:text="#{${error}}" class="text-danger"></span>
+
+            </p>
+
+            <p class="mb-3">
+                <label for="gemeente" th:text="#{gemeente}"></label>
+                <input type="text" id="gemeente" th:field="*{gemeente}" th:placeholder="#{gemeente}" class="form-control col-sm-5"/>
+
+            </p>
+            <p><input type="submit" th:value="#{title.clubhouse.add}" class="btn btn-secondary"></p>
+        </form>
+    </div>
+</main>
+<footer th:replace="fragments/footer"></footer>
+
+</body>
+</html>
